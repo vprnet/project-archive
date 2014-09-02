@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}School Closings in Vermont | VPR{% endblock %}
+{% block header_title %}School Closings{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div id="visible_mobile" class="col-xs-12">
+            <h2 class="visible-xs">School Closings</h2>
+            <p id="updated">Last Update: {{ timestamp }}</p>
+            <p class="list_purged">This list is purged daily at 11AM</p>
+            {% if school_closings %}
+            <div id="buttons" class="visible-xs">
+                <h4>See Closings By State:</h4>
+                    {% if 'Vermont' in school_closings %}
+                <h3><a href="#vermont" alt="Vermont school closings">Vermont</a></h3>
+                    {% endif %}
+                    {% if 'New York' in school_closings %}
+                <h3><a href="#new_york" alt="New York School Closings">New York</a></h3>
+                    {% endif %}
+                    {% if 'New Hampshire' in school_closings %}
+                <h3><a href="#new_hampshire" alt="New Hampshire School Closings">New Hampshire</a></h3>
+                    {% endif %}
+            </div>
+            {% else %}
+            <div id="no_reported" class="visible-xs">
+                <h3 class="no_closings">No Reported Closings</h3>
+                <p>There are <strong>no reported school closings</strong> at this time.</p>
+            </div>
+            {% endif %}
+                <hr class="visible-xs">
+        </div>
+        <div id="sidebar_container" class="col-sm-5">
+            <div class="row" id="eots">
+                <div class="col-md-6">
+                    <img class="img-responsive" src="{{ url_for('static', filename='img/EOTS_school_closings.jpg') }}" alt="Eye On The Sky Logo">
+                </div>
+                <div id="eots_margin" class="col-md-6">
+                    <div id="eots_links">
+                        <p><i class="icon ion-document-text"></i> <a href="http://www.fairbanksmuseum.org/forecasts" alt="Eye On The Sky print forecast">Read the forecast</a></p>
+                        <p><i class="icon ion-play"></i> <a href="http://www.vpr.net/xml/podcasts/forecast_update/eosforecast.mp3" alt="Eye On The Sky audio forecast">Listen to the forecast</a></p>
+                        <p><i class="icon ion-social-facebook"></i> <a href="https://www.facebook.com/EyeOnTheSky">EOTS On Facebook</a></p>
+                    </div>
+                </div>
+            </div>
+            {% include "underwriter.html" %}
+            {% if school_closings %}
+            <div class="recent_news">
+                <h3>Recent News</h3>
+                <div class="padding_box">
+                {% for story in recent_news %}
+                    <p><a href="{{ story.link }}" alt="{{ story.title }}">{{ story.title }}</a></p>
+                {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="hidden-xs vab">
+            {% include "vab.html" %}
+            </div>
+        </div>
+        <div id="closings_container" class="col-sm-7">
+            <div class="closings" id="big_screen">
+            {% include "closings.html" %}
+            </div>
+        </div>
+    </div>
+    <div class="visible-xs row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="vab">
+            {% include "vab.html" %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script-ck.js') }}"></script>
+{% endblock %}

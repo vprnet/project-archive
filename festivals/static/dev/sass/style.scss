@@ -1,0 +1,15 @@
+@import "bootstrap";
+@import "compass/css3";
+@import "mixin";
+@import "vpr";
+@import "vpr-svg";
+@import "ionicons";
+@import "festivals";
+
+body {
+    background: $gray-bg;
+}
+
+a {
+    color: $blue;
+}

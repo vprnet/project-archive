@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}VPR: Become An Underwriter{% endblock %}
+{% block description %}Underwriting on Vermont Public Radio delivers your business’s message to a desirable, statewide audience who appreciates your support of their station.{% endblock %}
+
+{% block content %}
+<div id="uw_page">
+<div class="jumbotron header">
+    <div class="container">
+        <h4>Business Underwriting on VPR News, VPR Classical and VPR.net</h4>
+        <h1>Supporting Public Radio Is Smart Marketing</h1>
+        <div id="jumbo-content">
+            <blockquote>
+                <p>"Simply by underwriting on VPR, you connect in a very different way. We get comments from our guests all the time who thank us for supporting VPR. It's just smart marketing, but marketing that feels very good."</p>
+                <small>Jed Davis, <em>The Farmhouse Group</em></small>
+            </blockquote>
+            <p class="pull-right"><a class="btn btn-primary btn-lg" href="http://www.vpr.net/inside_vpr/contact_us/?subject=Business+Underwriting">Contact The Underwriting Team</a></p>
+        </div>
+    </div>
+</div>
+
+<a id="link-to-directory" href="{{ url_for('directory') }}">
+<div id="find-uw">
+    <h4>Looking for an underwriter? You can find our underwriter directory here  <span class="glyphicon glyphicon-arrow-right"></span></h4>
+</div>
+</a>
+
+<div id="second-panel">
+    <div class="container">
+        <div class="row">
+            <div id="underwriter-text" class="col-sm-6">
+                <h4>Why Be An Underwriter?</h4>
+                <p>Underwriting on VPR connects you with a growing, statewide audience of more than 200,000 listeners and 100,000 unique monthly visitors to VPR.net.</p>
+                <p>You reach an audience that is better educated and more engaged in their communities. They have higher household incomes and are more active than the general population.</p>
+                <p>Your support of Vermont's trusted, independent source for news and entertainment is appreciated. Public Radio listeners perceive businesses that underwrite as more credible and are 88% more likely to buy products or services from companies that support public radio than from one that advertises commercially.</p>
+                <p>For more information on underwriting opportunities, <a href="http://www.vpr.net/inside_vpr/contact_us/?subject=Business+Underwriting">contact the VPR Underwriting Team.</a></p>
+            </div>
+            <div class="col-sm-6" id="uw-team">
+                <h4>Meet The Underwriting Team</h4>
+                <a href="http://digital.vpr.net/people/lesli-blount">
+                <div class="team row">
+                    <div class="col-xs-4">
+                        <img class="img-circle img-responsive" src="{{ url_for('static', filename='img/lesli.jpg') }}" />
+                    </div>
+                    <div class="col-xs-8">
+                        <h5>Lesli Blount</h5>
+                        <p>Director of Corporate Support</p>
+                    </div>
+                </div>
+                </a>
+                <a href="http://digital.vpr.net/people/gail-england">
+                <div class="team row">
+                    <div class="col-xs-4">
+                        <img class="img-circle img-responsive" src="{{ url_for('static', filename='img/gail.jpg') }}" />
+                    </div>
+                    <div class="col-xs-8">
+                        <h5>Gail England</h5>
+                        <p>Senior Corporate Support Associate</p>
+                    </div>
+                </div>
+                </a>
+                <a href="http://digital.vpr.net/people/will-pearson">
+                <div class="team row">
+                    <div class="col-xs-4">
+                        <img class="img-circle img-responsive" src="{{ url_for('static', filename='img/will.jpg') }}" />
+                    </div>
+                    <div class="col-xs-8">
+                        <h5>Will Pearson</h5>
+                        <p>Corporate Support Associate</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="third-panel">
+    <div class="container">
+
+        <h3>Coverage Maps</h4>
+        <div class="row">
+            <div class="col-sm-6">
+                <a href="http://mediad.publicbroadcasting.net/p/vpr/files/april-2014-vpr-coverage.pdf">
+                <img class="img-responsive" src="{{ url_for('static', filename='img/news-cov.png') }}" />
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <a href="http://mediad.publicbroadcasting.net/p/vpr/files/april-2014-vpr-classical-coverage.pdf">
+                <img class="img-responsive" src="{{ url_for('static', filename='img/classical-cov.png') }}" />
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+{% endblock %}
+{% block jquery %}{% endblock %}

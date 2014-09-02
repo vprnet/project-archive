@@ -1,0 +1,284 @@
+$classical: #fc8d59;
+$folk: #91cf60;
+
+h1 {
+    background: white;
+    padding: 10px;
+    font-size: 32px;
+    font-weight: 900;
+    border-bottom: 5px solid $folk;
+    border-left: 5px solid $classical;
+    text-align: right;
+    border-top: 1px lighten($gray, 30%);
+    border-right: 1px lighten($gray, 0%);
+    margin: 0 0 30px;
+    a {
+        color: $black;
+        &:hover {
+            color: $blue;
+            text-decoration: none;
+        }
+    }
+    @media (min-width: $phone) {
+        font-size: 62px;
+    }
+    @media (min-width: $tablet) {
+        font-size: 50px;
+    }
+    @media (min-width: $laptop) {
+        font-size: 72px;
+    }
+    @media (min-width: $big-screen) {
+        font-size: 96px;
+    }
+}
+
+form {
+    margin-bottom: 30px;
+    .btn {
+        font-size: 18px;
+        padding: 3px 12px;
+    }
+    .btn-primary {
+        background: $blue;
+        &:hover {
+            background: darken($blue, 10%);
+            border-color: lighten($gray, 30%);
+        }
+    }
+}
+
+.form-control {
+    font-size: 18px;
+}
+
+.pill {
+    cursor: pointer;
+    border: 3px solid darken($blue, 5%);
+    background: white;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    @media (min-width: $tablet) and (max-width: $laptop)  {
+        font-size: 12px;
+    }
+}
+
+#reset_results {
+    margin-bottom: 25px;
+    text-align: center;
+    display: none;
+    p {
+        &:hover {
+            background: lighten($blue, 20%);
+        }
+    }
+}
+
+#filters {
+    margin-bottom: 25px;
+    text-align: center;
+    p#everything_else {
+        border-color: darken($folk, 5%);
+        @include transition(all 0.25s);
+        &:hover {
+            background: lighten($folk, 15%);
+        }
+        &.active {
+            background: lighten($folk, 5%) !important;
+        }
+    }
+    p#just_classical {
+        border-color: darken($classical, 2%);
+        @include transition(all 0.25s);
+        &:hover {
+            background: lighten($classical, 15%);
+        }
+        &.active {
+            background: lighten($classical, 5%) !important;
+        }
+    }
+    p#all_fests {
+        border-color: $blue;
+        @include transition(all 0.25s);
+        &:hover {
+            background: lighten($blue, 15%);
+        }
+        &.active {
+            background: lighten($blue, 5%) !important;
+        }
+    }
+}
+
+div.festival {
+    position: relative;
+    margin-bottom: 20px;
+    .headline {
+        background: white;
+        position: relative;
+        margin-bottom: 3px;
+        padding: 10px;
+    }
+    p.dates {
+        margin-bottom: 0;
+        font-weight: 500;
+        color: $gray;
+        @media (max-width: $phone) {
+            font-size: 12px;
+        }
+    }
+    h2 {
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 0.1em;
+        cursor: pointer;
+        @media (max-width: $phone) {
+            font-size: 18px;
+        }
+        &:hover {
+            color: $blue;
+        }
+    }
+    p.location {
+        color: lighten($gray, 10%);
+        font-weight: 500;
+        font-size: 18px;
+        margin-bottom: 0;
+        @media (max-width: $phone) {
+            font-size: 14px;
+        }
+    }
+}
+
+
+.classical {
+    border-left: 5px solid $classical;
+}
+
+.folk {
+    border-left: 5px solid $folk;
+}
+
+div.past .headline{
+    border-left: none;
+    p.dates {
+        color: black;
+    }
+    h2 {
+        color: $gray;
+    }
+}
+
+div.past {
+    .classical {
+        border-right: 5px solid $classical;
+    }
+    .folk {
+        border-right: 5px solid $folk;
+    }
+    .detail {
+        border-left: none;
+    }
+}
+
+.detail {
+    background: white;
+    overflow-y: hidden;
+    position: relative;
+    padding-bottom: 10px;
+    @include transition(all .3s ease);
+    p {
+        padding-left: 10px;
+    }
+
+    font-size: 12px;
+    .festival_website, .festival_location {
+        font-size: 18px;
+        font-weight: 500;
+        a {
+            font-size: 14px;
+            color: $blue;
+            &:hover {
+                color: darken($blue, 10%);
+            }
+        }
+    }
+    .event_address {
+        margin-bottom: 0;
+    }
+    .festival_location {
+        margin-bottom: 5px;
+        color: $black;
+        span {
+        }
+    }
+    p.view_map {
+        color: $blue;
+        span {
+            margin-right: 3px;
+        }
+    }
+    &.closed {
+        max-height: 20px;
+    }
+    &.opened {
+        max-height: 900px;
+        &.events_1 {
+            max-height: 150px;
+        }
+        &.events_2 {
+            max-height: 230px;
+        }
+        &.events_3 {
+            max-height: 290px;
+        }
+        &.events_4 {
+            max-height: 350px;
+        }
+        &.events_5 {
+            max-height: 410px;
+        }
+        &.events_6 {
+            max-height: 470px;
+        }
+    }
+    .detail_prompt {
+        cursor: pointer;
+        text-align: center;
+        padding-top: 2px;
+        font-size: 12px;
+        font-weight: 700;
+        color: $gray;
+        margin-bottom: 0;
+        i {
+            font-size: 14px;
+            padding-left: 3px;
+        }
+        @include transition(all .1s ease);
+        &:hover {
+            color: $blue;
+        }
+    }
+}
+
+.contact {
+    max-width: 304px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    border-left: 4px solid $classical;
+    border-bottom: 4px solid $folk;
+    background: white;
+    h2 {
+        margin-top: 0;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 0px;
+        padding: 5px 0;
+    }
+    div.padding_box {
+        padding: 10px;
+        font-size: 18px;
+    }
+}
+

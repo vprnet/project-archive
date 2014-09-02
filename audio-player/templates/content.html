@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_title }} | VPR{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="callout" data-length="0"></div>
+        </div>
+    </div>
+    <div id="below_callout" class="row">
+        <div class="player_col col-sm-6">
+            {% include "_player.html" %}
+            {% include "_more_info.html" %}
+        </div>
+        <div id="right_panel" class="col-sm-6">
+            <div id="billboard" data-length="0"></div>
+            {% include "_underwriter.html" %}
+            {% include "_marcomm.html" %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script-ck.js') }}?ver=1.4"></script>
+{% endblock %}

@@ -1,0 +1,656 @@
+{% extends "base.html" %}
+
+{% block title %}VPR: Artist Mug Gallery{% endblock %}
+{% block description %}Artist Mug Gallery for VPR's Membership Drive Mugs.{% endblock %}
+
+
+{% block body_id %}id="artist-mugs"{% endblock %}
+
+{% block content %}
+<div class="jumbotron header">
+    <div class="container">
+        <h1>Welcome to VPR&#39;s Artist Mug Gallery</h1>
+        <img class="img-responsive" src="{{ url_for('static', filename='img/2013-freeman-miller-full.jpg') }}">
+        <div id="jumbo-content">
+        Our most recent Artist Mug is by Althea Freeman-Miller of Burlington whose studio is in Richmond. Althea has created a charming woodcut showing an early fall scene of a Vermonter tending her clothesline in the fresh breeze that harkens back to a simpler time. Tall sunflowers frame the image.
+        </div>
+    </div>
+</div>
+
+<div id="description-panel">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>About Artist Mugs</h2>
+                <p>VPR began commissioning mug designs from Vermont artists in 1992. Since then, more than 50 mugs have been created to celebrate VPR and its community. Browse our mug gallery to see all of our mug designs. Unfortunately, at this time the mugs from past drives highlighted in this gallery are not available for sale.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="gallery-panel">
+    <div class="container">
+        <div class="row">
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2013-tim-newcomb.jpg">
+            </div>
+            <p>Tim Newcomb</p>
+            <p class="year">2013</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2013-kathryn-milillo.jpg">
+            </div>
+            <p>Kathryn Milillo</p>
+            <p class="year">2013</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2013-althea-freeman-miller.jpg">
+            </div>
+            <p>Althea Freeman Miller</p>
+            <p class="year">2013</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2012-lisa-curry-mair.jpg">
+            </div>
+            <p>Lisa Curry Mair</p>
+            <p class="year">2012</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2012-greg-crawford.jpg">
+            </div>
+            <p>Greg Crawford</p>
+            <p class="year">2012</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2012-amy-radcliffe.jpg">
+            </div>
+            <p>Amy Radcliffe</p>
+            <p class="year">2012</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2011-vikki-day.jpg">
+            </div>
+            <p>Vikki Day</p>
+            <p class="year">2011</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2011-karen-day-vath.jpg">
+            </div>
+            <p>Karen Day Vath</p>
+            <p class="year">2011</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2011-david-macaulay.jpg">
+            </div>
+            <p>David Macaulay</p>
+            <p class="year">2011</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2010-tracey-pearson.jpg">
+            </div>
+            <p>Tracey Pearson</p>
+            <p class="year">2010</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2010-toni-lee-sangastiano.jpg">
+            </div>
+            <p>Toni Lee Sangastiano</p>
+            <p class="year">2010</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2010-stephen-huneck.jpg">
+            </div>
+            <p>Stephen Huneck</p>
+            <p class="year">2010</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2009-robert-mcbride.jpg">
+            </div>
+            <p>Robert Mcbride</p>
+            <p class="year">2009</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2009-rick-hunt.jpg">
+            </div>
+            <p>Rick Hunt</p>
+            <p class="year">2009</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2009-jayne-shoup.jpg">
+            </div>
+            <p>Jayne Shoup</p>
+            <p class="year">2009</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2008-shari-cornish.jpg">
+            </div>
+            <p>Shari Cornish</p>
+            <p class="year">2008</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2008-lyn-severance.jpg">
+            </div>
+            <p>Lyn Severance</p>
+            <p class="year">2008</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2008-joseph-lambert.jpg">
+            </div>
+            <p>Joseph Lambert</p>
+            <p class="year">2008</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2007-susan-sargent.jpg">
+            </div>
+            <p>Susan Sargent</p>
+            <p class="year">2007</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2007-jerome-couelle.jpg">
+            </div>
+            <p>Jerome Couelle</p>
+            <p class="year">2007</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2007-ed-koren.jpg">
+            </div>
+            <p>Ed Koren</p>
+            <p class="year">2007</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2006-peggy-kannenstine.jpg">
+            </div>
+            <p>Peggy Kannenstine</p>
+            <p class="year">2006</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2006-lynn-rupe.jpg">
+            </div>
+            <p>Lynn Rupe</p>
+            <p class="year">2006</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2006-joanna-bodenweber.jpg">
+            </div>
+            <p>Joanna Bodenweber</p>
+            <p class="year">2006</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2005-matthew-peake.jpg">
+            </div>
+            <p>Matthew Peake</p>
+            <p class="year">2005</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2005-harry-bliss.jpg">
+            </div>
+            <p>Harry Bliss</p>
+            <p class="year">2005</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2005-chris-varricchione.jpg">
+            </div>
+            <p>Chris Varricchione</p>
+            <p class="year">2005</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2004-shelburne-museum.jpg">
+            </div>
+            <p>Shelburne Museum</p>
+            <p class="year">2004</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2004-darryl-storrs.jpg">
+            </div>
+            <p>Darryl Storrs</p>
+            <p class="year">2004</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2004-chris-camarra.jpg">
+            </div>
+            <p>Chris Camarra</p>
+            <p class="year">2004</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2003-stephanie-stouffer.jpg">
+            </div>
+            <p>Stephanie Stouffer</p>
+            <p class="year">2003</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2003-dug-nap.jpg">
+            </div>
+            <p>Dug Nap</p>
+            <p class="year">2003</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2003-bonnie-christiansen.jpg">
+            </div>
+            <p>Bonnie Christiansen</p>
+            <p class="year">2003</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2002-stephen-huneck.jpg">
+            </div>
+            <p>Stephen Huneck</p>
+            <p class="year">2002</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2002-sarah-lee-terrat.jpg">
+            </div>
+            <p>Sarah Lee Terrat</p>
+            <p class="year">2002</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2002-bruce-hathaway.jpg">
+            </div>
+            <p>Bruce Hathaway</p>
+            <p class="year">2002</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2001-warren-kimble.jpg">
+            </div>
+            <p>Warren Kimble</p>
+            <p class="year">2001</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2001-tracey-campbell-pearson.jpg">
+            </div>
+            <p>Tracey Campbell Pearson</p>
+            <p class="year">2001</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2001-tom-vieth.jpg">
+            </div>
+            <p>Tom Vieth</p>
+            <p class="year">2001</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2000-miranda-thomas.jpg">
+            </div>
+            <p>Miranda Thomas</p>
+            <p class="year">2000</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2000-gayleen-aiken.jpg">
+            </div>
+            <p>Gayleen Aiken</p>
+            <p class="year">2000</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/2000-anna-dibble.jpg">
+            </div>
+            <p>Anna Dibble</p>
+            <p class="year">2000</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1999-ginny-joyner.jpg">
+            </div>
+            <p>Ginny Joyner</p>
+            <p class="year">1999</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1999-elizabeth-bunsen.jpg">
+            </div>
+            <p>Elizabeth Bunsen</p>
+            <p class="year">1999</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1999-carol-keiser-and-bill-hunt.jpg">
+            </div>
+            <p>Carol Keiser And Bill Hunt</p>
+            <p class="year">1999</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1998-sabra-field.jpg">
+            </div>
+            <p>Sabra Field</p>
+            <p class="year">1998</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1998-lyn-severance.jpg">
+            </div>
+            <p>Lyn Severance</p>
+            <p class="year">1998</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1998-bekah-perks.jpg">
+            </div>
+            <p>Bekah Perks</p>
+            <p class="year">1998</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1997-woody-jackson.jpg">
+            </div>
+            <p>Woody Jackson</p>
+            <p class="year">1997</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1997-adrienne-gilanian.jpg">
+            </div>
+            <p>Adrienne Gilanian</p>
+            <p class="year">1997</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1996-phoebe-stone.jpg">
+            </div>
+            <p>Phoebe Stone</p>
+            <p class="year">1996</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1996-marie-ahearn.jpg">
+            </div>
+            <p>Marie Ahearn</p>
+            <p class="year">1996</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1995-stephen-huneck.jpg">
+            </div>
+            <p>Stephen Huneck</p>
+            <p class="year">1995</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1995-roger-sandes.jpg">
+            </div>
+            <p>Roger Sandes</p>
+            <p class="year">1995</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1994-sally-stetson.jpg">
+            </div>
+            <p>Sally Stetson</p>
+            <p class="year">1994</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1994-katherine-monstream.jpg">
+            </div>
+            <p>Katherine Monstream</p>
+            <p class="year">1994</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1994-ed-koren.jpg">
+            </div>
+            <p>Ed Koren</p>
+            <p class="year">1994</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1993-sabra-field.jpg">
+            </div>
+            <p>Sabra Field</p>
+            <p class="year">1993</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1993-mary-azarian.jpg">
+            </div>
+            <p>Mary Azarian</p>
+            <p class="year">1993</p>
+        </div>
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1992-woody-jackson.jpg">
+            </div>
+            <p>Woody Jackson</p>
+            <p class="year">1992</p>
+        </div>
+    
+        </div>
+        <div class="row">
+    
+    
+        <div class="credit col-sm-4">
+            <div class="img-container">
+                <img class="img-responsive lazy" src="/apps/support/static/img/loading1.gif" data-original="static/img/artist-mugs/thumbnails/1992-stephen-huneck.jpg">
+            </div>
+            <p>Stephen Huneck</p>
+            <p class="year">1992</p>
+        </div>
+    
+    
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/lazyload.js') }}" type="text/javascript"></script>
+<script type="text/javascript">
+    $(window).load(function() {
+        $("img.lazy").lazyload();
+    });
+</script>
+{% endblock %}
