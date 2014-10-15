@@ -30,6 +30,7 @@ def api_feed(tag, numResults=1, char_limit=240, thumbnail=False, sidebar=False):
             byline = False
 
         try:  # if there's an image, determine orientation and define boundary
+            image = True
             story_image = story['image'][0]['crop'][0]
             image_url = story_image['src']
             if "?" in image_url:
@@ -69,7 +70,7 @@ def api_feed(tag, numResults=1, char_limit=240, thumbnail=False, sidebar=False):
 
         text = full_text[:paragraphs_needed]
 
-        if thumbnail:
+        if thumbnail and image:
             try:
                 if sidebar:
                     image = generate_thumbnail(image_url, preserve_ratio=True, size=(326, 326))

@@ -6,7 +6,7 @@ settings.py
 config.py
 venv
 trash
-app/static/img/thumbnails
+thumbnails/*.jpg
 .sass-cache
 node_modules
 app/static/js/libs
