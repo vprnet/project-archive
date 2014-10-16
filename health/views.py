@@ -9,7 +9,6 @@ def index():
     page_url = BASE_URL + request.path
     page_title = 'Health Care In Vermont'
     stories = api_feed([245948266, 186100276], numResults=10, thumbnail=True)
-    reporters = reporter_list([245948266, 186100276])
     follow_the_money = api_feed([255414453])[0]
 
     social = {
@@ -26,7 +25,6 @@ def index():
         stories=stories,
         social=social,
         page_url=page_url,
-        reporters=reporters,
         follow=follow_the_money)
 
 
