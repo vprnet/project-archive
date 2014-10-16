@@ -166,8 +166,8 @@ def reporter_image(url):
     r = requests.get(url)
     page = r.text
     soup = Soup(page)
-    person_card = soup.find_all(id="person-card")[0]
     try:
+        person_card = soup.find_all(id="person-card")[0]
         image = person_card.find_all('img')[0].get('src')
         thumbnail = generate_thumbnail(image, size=(100, 100))
     except IndexError:
