@@ -9,13 +9,10 @@ settings.py
 config.py
 venv
 trash
-<<<<<<< HEAD
 thumbnails/*.jpg
-=======
 app/static/img/thumbnails
 thumbnails/*.jpg
 */thumbnails/*.jpg
->>>>>>> c85a08d0e66c94bea415a31a0ae475acacd513db
 .sass-cache
 node_modules
 app/static/js/libs
