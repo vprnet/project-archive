@@ -1,5 +1,6 @@
-from config import GOOGLE_SPREADSHEET_USER, GOOGLE_SPREADSHEET_PASSWORD, GOOGLE_SPREADSHEET_SOURCE, ABSOLUTE_PATH
+from config import GOOGLE_SPREADSHEET_USER, GOOGLE_SPREADSHEET_PASSWORD, GOOGLE_SPREADSHEET_SOURCE, ABSOLUTE_PATH, OPEN_CAGE_API_KEY
 from google_spreadsheet.api import SpreadsheetAPI
+from geopy.geocoders import OpenCage
 from operator import itemgetter
 from datetime import datetime
 from slugify import slugify
@@ -46,16 +47,24 @@ def get_underwriters():
             else:
                 print "Modified: ", underwriter['name']
                 uw_dict[name] = underwriter
-                lat, lng = get_coords(underwriter['address'], underwriter['zip'])
-                uw_dict[name]['lat'], uw_dict[name]['lng'] = lat, lng
                 uw_dict[name]['url'] = add_http(uw_dict[name]['url'])
+
+                # Only set the lat & long if the zip code is not 000000
+                if str(underwriter['zip']) != '00000':
+                    lat, lng = get_coords(underwriter['address'], underwriter['city'], underwriter['state'], underwriter['zip'])
+                    uw_dict[name]['lat'], uw_dict[name]['lng'] = lat, lng
         else:
-            print "Added: ", underwriter['name']
-            lat, lng = get_coords(underwriter['address'], underwriter['zip'])
-            uw_dict[name] = underwriter
-            uw_dict[name]['lat'] = lat
-            uw_dict[name]['lng'] = lng
-            uw_dict[name]['url'] = add_http(uw_dict[name]['url'])
+            # only add it if the name is present
+            if underwriter['name'] is not None:
+              print "Added: ", underwriter['name']
+              uw_dict[name] = underwriter
+              uw_dict[name]['url'] = add_http(uw_dict[name]['url'])
+
+              # Only set the lat & long if the zip code is not 000000
+              if str(underwriter['zip']) != '00000':
+                  lat, lng = get_coords(underwriter['address'], underwriter['city'], underwriter['state'], underwriter['zip'])
+                  uw_dict[name]['lat'] = lat
+                  uw_dict[name]['lng'] = lng
 
     uw_list = json.dumps(sorted([v for k, v in uw_dict.iteritems()], key=itemgetter('name')))
 
@@ -86,7 +95,13 @@ def get_uw(letter=None):
         uw_by_letter = [uw for uw in underwriters if uw['letter'] == letter]
         underwriters = uw_by_letter
 
-    locations = [[str(uw['name']), uw['lat'], uw['lng']] for uw in underwriters]
+    locations = []
+
+    for uw in underwriters:
+        try:
+            locations.append([str(uw['name']), uw['lat'], uw['lng']])
+        except:
+            continue
 
     return underwriters, locations
 
@@ -145,12 +160,15 @@ def get_prize_content():
     return header, header_content, image, prize_list
 
 
-def get_coords(address, zipcode):
-    sleep(0.2)
-    location = slugify(unicode(address)) + "+" + str(zipcode)
-    s = 'http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address='
-    r = requests.get("%s%s" % (s, location))
-    result = r.json()
-    lat = result['results'][0]['geometry']['location']['lat']
-    lng = result['results'][0]['geometry']['location']['lng']
-    return lat, lng
+def get_coords(address, city, state, zipcode):
+    geolocator = OpenCage(OPEN_CAGE_API_KEY)
+
+    if address is None:
+        address = ''
+
+    full_address =  unicode(str(address)) + " " + unicode(str(city)) + " " + unicode(str(state)) + " " + unicode(str(zipcode))
+
+    print "Full Address: ", full_address.strip()
+
+    location = geolocator.geocode(full_address, timeout=5)
+    return location.latitude, location.longitude
