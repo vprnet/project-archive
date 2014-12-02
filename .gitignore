@@ -1,3 +1,5 @@
+support/uw.json
+
 *.py[cod]
 *.gz
 *.DS_Store
