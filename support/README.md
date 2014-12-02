@@ -15,7 +15,7 @@ to map out the various under writers.
 NOTE: A `uw.json` file _must_ exist in the project root for this app to work.
 It should contain an empty JSON object: `{}`:
 
-    `touch uw.json && echo "{}" > uw.json`
+    touch uw.json && echo "{}" > uw.json
 
 Copy the config template `cp _config.py config.py` and specify the various empty
 secrets within the new `config.py`.
