@@ -2,7 +2,7 @@ from index import app
 from flask import render_template, request
 from config import BASE_URL
 from closings import closings
-from query import api_feed
+from query import api_feed, get_callout
 
 
 @app.route('/')
@@ -21,10 +21,14 @@ def index():
         'twitter_hashtag': "vtwx"
     }
 
+    SHEET_ID = 'tzE2PsqJoWRpENlMr-ZlS8A'
+    callout = get_callout(SHEET_ID)
+
     return render_template('content.html',
         page_title=page_title,
         school_closings=school_closings,
         social=social,
         timestamp=timestamp,
         recent_news=recent_news,
+        callout=callout,
         page_url=page_url)

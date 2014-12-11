@@ -5,10 +5,12 @@ import Image
 import ImageOps
 import urllib
 import os
+import markdown
+from google_spreadsheet.api import SpreadsheetAPI
 from bs4 import BeautifulSoup as Soup
 from datetime import datetime
 from cStringIO import StringIO
-from config import NPR_API_KEY, ABSOLUTE_PATH
+from config import NPR_API_KEY, ABSOLUTE_PATH, GOOGLE_SPREADSHEET
 
 
 def api_feed(tag, numResults=1, char_limit=140, image=False, byline=False,
@@ -201,3 +203,22 @@ def convert_date(timestamp):
     year = timestamp[12:16]
     date = month + ' ' + day + ", " + year
     return date
+
+def get_google_sheet(sheet_key=False, sheet_id='od6'):
+    """Uses python_google_spreadsheet API to interact with sheet"""
+    api = SpreadsheetAPI(GOOGLE_SPREADSHEET['USER'],
+        GOOGLE_SPREADSHEET['PASSWORD'],
+        GOOGLE_SPREADSHEET['SOURCE'])
+    sheet = api.get_worksheet(sheet_key, sheet_id)
+    sheet_object = sheet.get_rows()
+    return sheet_object
+
+
+def get_callout(sheet_key):
+    callout = get_google_sheet(sheet_key, sheet_id='od4')
+    md = callout[0]['text']
+    if md:
+        html = markdown.markdown(md)
+    else:
+        html = False
+    return html
