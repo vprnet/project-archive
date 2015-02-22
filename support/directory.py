@@ -109,7 +109,7 @@ def get_uw(letter=None):
 
 
 def get_pledge_content():
-    sheet = api.get_worksheet('tR3nxBDe7HBQMaFtU2gg44w', 'od6')
+    sheet = api.get_worksheet('1Kqi2NWJLkybQTcJcRyRzRpNuw3qh3lsng1y_4xV5iQQ', 'od6')
     pledge_sheet = sheet.get_rows()
     header = pledge_sheet[0]['header']
     header_content = pledge_sheet[0]['headercontent']
@@ -118,7 +118,7 @@ def get_pledge_content():
 
 
 def get_prize_content():
-    sheet = api.get_worksheet('tR3nxBDe7HBQMaFtU2gg44w', 'od7')
+    sheet = api.get_worksheet('1Kqi2NWJLkybQTcJcRyRzRpNuw3qh3lsng1y_4xV5iQQ', 'od7')
     prize_sheet = sheet.get_rows()
     header = prize_sheet[0]['header']
     header_content = prize_sheet[0]['headercontent']
