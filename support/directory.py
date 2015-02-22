@@ -52,7 +52,8 @@ def get_underwriters():
                 # Only set the lat & long if the zip code is not 000000
                 if str(underwriter['zip']) != '00000':
                     lat, lng = get_coords(underwriter['address'], underwriter['city'], underwriter['state'], underwriter['zip'])
-                    uw_dict[name]['lat'], uw_dict[name]['lng'] = lat, lng
+                    if lat is not None and lng is not None:
+                        uw_dict[name]['lat'], uw_dict[name]['lng'] = lat, lng
         else:
             # only add it if the name is present
             if underwriter['name'] is not None:
@@ -63,8 +64,9 @@ def get_underwriters():
               # Only set the lat & long if the zip code is not 000000
               if str(underwriter['zip']) != '00000':
                   lat, lng = get_coords(underwriter['address'], underwriter['city'], underwriter['state'], underwriter['zip'])
-                  uw_dict[name]['lat'] = lat
-                  uw_dict[name]['lng'] = lng
+                  if lat is not None and lng is not None:
+                      uw_dict[name]['lat'] = lat
+                      uw_dict[name]['lng'] = lng
 
     uw_list = json.dumps(sorted([v for k, v in uw_dict.iteritems()], key=itemgetter('name')))
 
@@ -171,4 +173,8 @@ def get_coords(address, city, state, zipcode):
     print "Full Address: ", full_address.strip()
 
     location = geolocator.geocode(full_address, timeout=5)
-    return location.latitude, location.longitude
+
+    if location is not None:
+        return location.latitude, location.longitude
+    else:
+        return None, None
