@@ -5,9 +5,8 @@ import hashlib
 import gzip
 import time
 from sys import argv
-from boto.s3.connection import S3Connection
+from boto.s3.connection import S3Connection, OrdinaryCallingFormat
 from boto.s3.key import Key
-from boto.s3.connection import OrdinaryCallingFormat
 from config import (AWS_KEY, AWS_SECRET_KEY, AWS_BUCKET, AWS_DIRECTORY,
     HTML_EXPIRES, STATIC_EXPIRES, IGNORE_DIRECTORIES, IGNORE_FILES,
     IGNORE_FILE_TYPES, ABSOLUTE_PATH)
