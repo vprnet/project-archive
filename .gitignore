@@ -7,6 +7,7 @@ support/uw.json
 upload_static.py
 settings.py
 config.py
+support_access.json
 venv
 trash
 thumbnails/*.jpg

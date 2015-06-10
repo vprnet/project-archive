@@ -5,18 +5,14 @@ import inspect
 AWS_KEY = ''
 AWS_SECRET_KEY = ''
 AWS_BUCKET = 'www.vpr.net'
-AWS_DIRECTORY = 'apps/sandbox'
+AWS_DIRECTORY = 'sandbox/support'
 
 # Frozen Flask
 FREEZER_DEFAULT_MIMETYPE = 'text/html'
 FREEZER_IGNORE_MIMETYPE_WARNINGS = True
 
 OPEN_CAGE_API_KEY = ''
-
 GOOGLE_MAPS_API_URL = ''
-GOOGLE_SPREADSHEET_USER = ''
-GOOGLE_SPREADSHEET_PASSWORD = ''
-GOOGLE_SPREADSHEET_SOURCE = ''
 
 # Cache Settings (units in seconds)
 STATIC_EXPIRES = 60 * 24 * 3600

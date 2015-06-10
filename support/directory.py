@@ -1,5 +1,4 @@
-from config import GOOGLE_SPREADSHEET_USER, GOOGLE_SPREADSHEET_PASSWORD, GOOGLE_SPREADSHEET_SOURCE, ABSOLUTE_PATH, OPEN_CAGE_API_KEY
-from google_spreadsheet.api import SpreadsheetAPI
+from config import ABSOLUTE_PATH, OPEN_CAGE_API_KEY
 from geopy.geocoders import OpenCage
 from operator import itemgetter
 from datetime import datetime
@@ -7,8 +6,10 @@ from slugify import slugify
 from time import sleep
 import requests
 import json
+import gspread
+from oauth2client.client import SignedJwtAssertionCredentials
 
-api = SpreadsheetAPI(GOOGLE_SPREADSHEET_USER, GOOGLE_SPREADSHEET_PASSWORD, GOOGLE_SPREADSHEET_SOURCE)
+# api = SpreadsheetAPI(GOOGLE_SPREADSHEET_USER, GOOGLE_SPREADSHEET_PASSWORD, GOOGLE_SPREADSHEET_SOURCE)
 
 uw_json_f = ABSOLUTE_PATH + 'uw.json'
 
@@ -20,8 +21,15 @@ def get_underwriters():
     locally."""
 
     # get list of underwriters (as dictionaries) from GDrive (no coords)
-    sheet = api.get_worksheet('tJ1HhJM7AFoUFP8t8EwgTLg', 'od6')
-    new_underwriters = sheet.get_rows()
+
+    json_key = json.load(open('support_access.json'))
+    scope = ['https://spreadsheets.google.com/feeds']
+    credentials = SignedJwtAssertionCredentials(json_key["client_email"], json_key['private_key'], scope)
+    authorization = gspread.authorize(credentials)
+    spreadsheet = authorization.open("Underwriter_Directory")
+    worksheet = spreadsheet.get_worksheet(0)
+
+    new_underwriters = worksheet.get_all_records()
 
     # get cached version of UW listings, which include coords
     with open(uw_json_f, 'r') as f:
