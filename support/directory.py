@@ -4,15 +4,11 @@ from operator import itemgetter
 from datetime import datetime
 from slugify import slugify
 from time import sleep
+from sheet import get_google_sheet
 import requests
 import json
-import gspread
-from oauth2client.client import SignedJwtAssertionCredentials
-
-# api = SpreadsheetAPI(GOOGLE_SPREADSHEET_USER, GOOGLE_SPREADSHEET_PASSWORD, GOOGLE_SPREADSHEET_SOURCE)
 
 uw_json_f = ABSOLUTE_PATH + 'uw.json'
-
 
 def get_underwriters():
     """Grab the Underwiter spreadsheet on Google Drive, look it see if it's been
@@ -21,15 +17,7 @@ def get_underwriters():
     locally."""
 
     # get list of underwriters (as dictionaries) from GDrive (no coords)
-
-    json_key = json.load(open('support_access.json'))
-    scope = ['https://spreadsheets.google.com/feeds']
-    credentials = SignedJwtAssertionCredentials(json_key["client_email"], json_key['private_key'], scope)
-    authorization = gspread.authorize(credentials)
-    spreadsheet = authorization.open("Underwriter_Directory")
-    worksheet = spreadsheet.get_worksheet(0)
-
-    new_underwriters = worksheet.get_all_records()
+    new_underwriters = get_google_sheet()
 
     # get cached version of UW listings, which include coords
     with open(uw_json_f, 'r') as f:
