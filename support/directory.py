@@ -38,7 +38,7 @@ def get_underwriters():
     # check to see what has changed. If something changed, copy and get coords
     for name, underwriter in new_uw_dict.iteritems():
         if name in uw_dict:
-            if underwriter['lastupdated'] == uw_dict[name]['lastupdated']:
+            if underwriter['last updated'] == uw_dict[name]['last updated']:
                 continue
             else:
                 print "Modified: ", underwriter['name']
@@ -107,7 +107,7 @@ def get_uw(letter=None):
 def get_pledge_content():
     pledge_sheet = get_pledge_sheet()
     header = pledge_sheet[0]['header']
-    header_content = pledge_sheet[0]['headercontent']
+    header_content = pledge_sheet[0]['header content']
     image = pledge_sheet[0]['image']
     return header, header_content, image
 
@@ -115,41 +115,29 @@ def get_pledge_content():
 def get_prize_content():
     prize_sheet = get_prize_sheet()
     header = prize_sheet[0]['header']
-    header_content = prize_sheet[0]['headercontent']
-    image = prize_sheet[0]['socialimage']
+    header_content = prize_sheet[0]['header content']
+    image = prize_sheet[0]['social image']
 
     del prize_sheet[0]
 
     prize_list = []
     for prize in prize_sheet:
         prize_object = {}
-        title = prize['prizetitle']
+        title = prize['prize title']
         description = prize['description']
-        prize_img = prize['imageurl']
+        prize_img = prize['image url']
         try:
             date_object = datetime.strptime(prize['date'], '%m/%d/%Y %H:%M:%S')
             date = datetime.strftime(date_object, '%A, %B %d').lstrip('0')
             time = datetime.strftime(date_object, '%I%p').lstrip('0')
         except TypeError:
             date, time = False, False
-        try:
-            date2_object = datetime.strptime(prize['additionaldate'], '%m/%d/%Y %H:%M:%S')
-            now = datetime.now()
-            if date2_object < now:
-                date2, time2 = False, False
-            else:
-                date2 = datetime.strftime(date2_object, '%A, %B %d').lstrip('0')
-                time2 = datetime.strftime(date2_object, '%I%p').lstrip('0')
-        except TypeError:
-            date2, time2 = False, False
         winners = prize['winners']
         prize_object = {'title': title,
                 'description': description,
                 'img': prize_img,
                 'date': date,
                 'time': time,
-                'date2': date2,
-                'time2': time2,
                 'winners': winners}
         prize_list.append(prize_object)
 
