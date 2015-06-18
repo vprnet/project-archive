@@ -4,7 +4,7 @@ from operator import itemgetter
 from datetime import datetime
 from slugify import slugify
 from time import sleep
-from sheet import get_google_sheet
+from sheet import get_underwriter_sheet, get_pledge_sheet, get_prize_sheet
 import requests
 import json
 
@@ -17,7 +17,7 @@ def get_underwriters():
     locally."""
 
     # get list of underwriters (as dictionaries) from GDrive (no coords)
-    new_underwriters = get_google_sheet()
+    new_underwriters = get_underwriter_sheet()
 
     # get cached version of UW listings, which include coords
     with open(uw_json_f, 'r') as f:
@@ -105,8 +105,7 @@ def get_uw(letter=None):
 
 
 def get_pledge_content():
-    sheet = api.get_worksheet('1Kqi2NWJLkybQTcJcRyRzRpNuw3qh3lsng1y_4xV5iQQ', 'od6')
-    pledge_sheet = sheet.get_rows()
+    pledge_sheet = get_pledge_sheet()
     header = pledge_sheet[0]['header']
     header_content = pledge_sheet[0]['headercontent']
     image = pledge_sheet[0]['image']
@@ -114,8 +113,7 @@ def get_pledge_content():
 
 
 def get_prize_content():
-    sheet = api.get_worksheet('1Kqi2NWJLkybQTcJcRyRzRpNuw3qh3lsng1y_4xV5iQQ', 'od7')
-    prize_sheet = sheet.get_rows()
+    prize_sheet = get_prize_sheet()
     header = prize_sheet[0]['header']
     header_content = prize_sheet[0]['headercontent']
     image = prize_sheet[0]['socialimage']
