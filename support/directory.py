@@ -19,6 +19,7 @@ def get_underwriters():
     # get list of underwriters (as dictionaries) from GDrive (no coords)
     new_underwriters = get_underwriter_sheet()
 
+
     # get cached version of UW listings, which include coords
     with open(uw_json_f, 'r') as f:
         old_underwriters = json.load(f)
@@ -32,11 +33,20 @@ def get_underwriters():
     uw_dict = {}
     for old_uw in old_underwriters:
         # only add UWs currently on SS
+
         if old_uw['name'] in new_uw_dict:
             uw_dict[old_uw['name']] = old_uw
 
+
     # check to see what has changed. If something changed, copy and get coords
+
     for name, underwriter in new_uw_dict.iteritems():
+        # Google sheets are removing the leading zero of zipcodes. If the length of the zip is 4, add a zero to its start.
+        if len(str(underwriter['zip'])) == 4:
+            short_zip = str(underwriter['zip'])
+            full_zip = "0" + short_zip
+            underwriter['zip'] = full_zip
+
         if name in uw_dict:
             if underwriter['last updated'] == uw_dict[name]['last updated']:
                 continue
@@ -63,6 +73,7 @@ def get_underwriters():
                   if lat is not None and lng is not None:
                       uw_dict[name]['lat'] = lat
                       uw_dict[name]['lng'] = lng
+
 
     uw_list = json.dumps(sorted([v for k, v in uw_dict.iteritems()], key=itemgetter('name')))
 

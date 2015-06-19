@@ -20,14 +20,7 @@
         <div class="col-sm-6" id="underwriter-list">
             <div class="jumbotron">
                 <h1>Underwriter Directory</h1>
-                <p>Looking for an underwriter? Find them here by using the map
-                or searching by letter.</p>
-            </div>
-            <div id="letters">
-                {% for letter in list_of_letters %}
-                    <a class="letters" href="{{ url_for('letter', letter=letter) }}">
-                        {{ letter|capitalize }}</a>
-                {% endfor %}
+                <p>Looking for our underwriters? Find them here.</p>
             </div>
             {% for underwriter in underwriters %}
                 <div class="underwriter">
