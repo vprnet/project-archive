@@ -9,6 +9,7 @@ settings.py
 config.py
 underwriter_access.json
 pledge_and_prize_access.json
+homepage.json
 venv
 trash
 thumbnails/*.jpg
