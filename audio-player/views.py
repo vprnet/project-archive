@@ -1,10 +1,8 @@
 from index import app
 from flask import render_template, request
 from config import BASE_URL
-from query import get_callout, get_billboard
+from query import get_callout
 
-SHEET_ID = 'tzE2PsqJoWRpENlMr-ZlS8A'
-#SHEET_ID = 'tIk5itVcfOHUmakkmpjCcxw'  # Demo sheet
 
 
 @app.route('/')
@@ -22,22 +20,12 @@ def index():
         'twitter_hashtag': ""
     }
 
+    SHEET_ID = 'tzE2PsqJoWRpENlMr-ZlS8A'
+    callout = get_callout(SHEET_ID)
+
     return render_template('content.html',
         page_title=page_title,
         social=social,
         stream_name=stream_name,
+        callout=callout,
         page_url=page_url)
-
-
-@app.route('/billboard')
-def billboard():
-    billboard = get_billboard(SHEET_ID)
-
-    return render_template('billboard.html', billboard=billboard)
-
-
-@app.route('/callout')
-def callout():
-    callout = get_callout(SHEET_ID)
-
-    return render_template('callout.html', callout=callout)
