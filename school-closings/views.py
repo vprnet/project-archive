@@ -10,7 +10,7 @@ def index():
     page_url = BASE_URL + request.path
     page_title = 'School Closings'
     school_closings, timestamp = closings()
-    recent_news = api_feed([178480359], numResults=5)
+    recent_news = api_feed([427048436], numResults=5)
 
     social = {
         'title': "Is Your School Closed Today?",
