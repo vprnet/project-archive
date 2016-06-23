@@ -134,11 +134,3 @@ def prizes():
         page_url=page_url,
         page_title=page_title,
         prizes=prizes)
-
-
-# Version in S3 is working. Won't be upgrading this page any more as VPR no
-# longer commisions mugs
-#@app.route('/artist-mugs')
-#def artist_mugs():
-#    """No longer connected to Google Spreadsheet since no more mugs"""
-#    return render_template('artist-mugs.html')
