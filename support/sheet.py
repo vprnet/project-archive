@@ -7,7 +7,7 @@ def get_underwriter_sheet():
     scope = ['https://spreadsheets.google.com/feeds']
     credentials = SignedJwtAssertionCredentials(json_key['client_email'], json_key['private_key'], scope)
     authorization = gspread.authorize(credentials)
-    spreadsheet = authorization.open('Underwriter_Directory')
+    spreadsheet = authorization.open('Underwriter Directory')
     worksheet = spreadsheet.get_worksheet(0)
 
     return worksheet.get_all_records()
