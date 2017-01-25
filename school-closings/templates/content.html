@@ -50,16 +50,6 @@
                 </div>
             </div>
             {% include "underwriter.html" %}
-            {% if school_closings %}
-            <div class="recent_news">
-                <h3>Recent News</h3>
-                <div class="padding_box">
-                {% for story in recent_news %}
-                    <p><a href="{{ story.link }}" alt="{{ story.title }}">{{ story.title }}</a></p>
-                {% endfor %}
-                </div>
-            </div>
-            {% endif %}
 
             <div class="hidden-xs vab">
             {% include "vab.html" %}

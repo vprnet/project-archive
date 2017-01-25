@@ -2,7 +2,7 @@ from index import app
 from flask import render_template, request
 from config import BASE_URL
 from closings import closings
-from query import api_feed, get_callout
+from query import get_callout
 
 
 @app.route('/')
@@ -10,7 +10,6 @@ def index():
     page_url = BASE_URL + request.path
     page_title = 'School Closings'
     school_closings, timestamp = closings()
-    recent_news = api_feed([427048436], numResults=5)
 
     social = {
         'title': "Is Your School Closed Today?",
@@ -29,6 +28,5 @@ def index():
         school_closings=school_closings,
         social=social,
         timestamp=timestamp,
-        recent_news=recent_news,
         callout=callout,
         page_url=page_url)
